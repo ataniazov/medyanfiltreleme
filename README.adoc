@@ -37,10 +37,11 @@ Uygulamanın Python dilinde kodlamasında gerçekleştirilecektir. +
 
 == 4) Medyan Filtreleme Yöntemi +
 
-Medyan filtresi gürültü temizlemek, görüntüyü keskinleştirmek için en sık kullanılan algoritmalardan biridir. Medyan filtreleme 
-doğrusal bir işlem değildir. Medyan filtresinde, ilk olarak NxN’lik bir matris kullanılarak değerler küçükten büyüğe sıralanır. 
-Daha sonra ortanca değer merkezde bulunan değerin yerine yazılır. Bu işlem soldan sağa tüm sütunlar için gerçekleştirildikten sonra
-(Şekil 2.1) her satır için gerçekleştirilmeye devam eder. +
+Bahsedildiği üzere medyan filtresi en çok tercih edilen algoritmaların başında yer alır ve lineer bir işlem değildir. +
 
-image::m1.png[Resim 2.1]
-Şekil: 2.1
+
+Medyan filtreler nonlineer uzaysal filtrelerdir. Maskeyi oluşturan boyuttaki resim piksel değerlerinin küçükten büyüğe sıralanıp ortadaki değeri merkez piksele atama işlemidir.Medyan filtresi bir alçak geçiren filtredir. +
+
+Mean filtrelerinin genel çalışma mantığı ise; NxN lik bir matris penceresi içerisinde bir ortalama değer bulmaya çalışarak işlenir. 
+Bunu yaparken görüntü üzerinde gezen bir kayan pencere yöntemi kullanırlar. Medyan filtresi mean filtreleri içerisinde en basit olanıdır. Pencere içerisindeki değerlerin aritmetik ortalamasını alır ve bu şekilde büyük atlamaları kaldırmış olur. Filtre uygulandıktan sonra; konumlarından ayrılmış olan pikseller tespit edilerek temizlenmiş olur. Görüntü içerisindeki yerel değişimleri yumuşatmış olur. Sırada medyan filtresinin gerçekleştirdiği işlemler anlatılacaktır. +
+
