@@ -51,19 +51,19 @@ Medyan filtresi için örnek olarak alınan değerler sırasıyla şunlar olsun:
 Alınan bu sayıları  3’erli gruplayalım(window size=3 alındı): +
 
 
-1.grup: [996 996 1718]  +
+*1.grup:* [996 996 1718]  +
 → Burada 996 sayısının 2 kere kullanılmasının sebebi     window size’ın 3 olarak belirlenmiş  olmasıdır.
 1.grup için medyan=996 O halde 1. Sayı 996’dır. +
-2.grup:[ 996, 1718, 1002] +
+*2.grup:*[ 996, 1718, 1002] +
 Sıralanırsa: 996 1002 1718 +
 Bu grup için medyan değeri=1002dir. 2.sayı da 1002 olmuş oldu. +
-3.grup:[ 1718, 1002, 993] +
+*3.grup:*[ 1718, 1002, 993] +
 Sıralama işleminin ardından medyan değeri=1002. Üçüncü sayı 1002 olmuştur. +
-4.grup:[1002 993 1693] +
+*4.grup:*[1002 993 1693] +
 4.grubun medyanı=1002 bulundu. 4. Sayı=1002 +
-5.grup:[ 993, 1692, 1003 ] +
+*5.grup:*[ 993, 1692, 1003 ] +
 Üç sayının medyanı 1003 dür. O halde beşinci sayının yeni değeri 1003 dür. +
-6. grup: [1692 1003 1003] +
+*6. grup:* [1692 1003 1003] +
 6.grubun medyan değeri. 1003 dür. O halde son sayının yeni değeri 1003 olmuştur. +
 Buna göre ilk başta verilmiş olan; 996 1718 1002 993 1692 1003 sayılarının yeni değerleri sırayla aşağıdaki gibi olmuştur. +
  996  1002  1002  1002 1003 1003  +
