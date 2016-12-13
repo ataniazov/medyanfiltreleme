@@ -41,3 +41,6 @@ Medyan filtresi gürültü temizlemek, görüntüyü keskinleştirmek için en s
 doğrusal bir işlem değildir. Medyan filtresinde, ilk olarak NxN’lik bir matris kullanılarak değerler küçükten büyüğe sıralanır. 
 Daha sonra ortanca değer merkezde bulunan değerin yerine yazılır. Bu işlem soldan sağa tüm sütunlar için gerçekleştirildikten sonra
 (Şekil 2.1) her satır için gerçekleştirilmeye devam eder. +
+
+image::m1.png[Resim 2.1]
+Şekil: 2.1
