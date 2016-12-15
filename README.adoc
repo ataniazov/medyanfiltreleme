@@ -189,7 +189,7 @@ image::m1normal.png[normal]
 
 Görüntünün Ağırlık Toplama işleminden sonraki hali +
 
-image::m1agırlık.pngp[Sonuç]
+image::m1agırlık.png[Sonuç Ağırlık]
 
 Görüntünün Medyan Filtre işleminden geçmiş hali +
 
