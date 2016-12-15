@@ -93,7 +93,8 @@ for i in range(w):
         graylist[i][j]=gray
         pix[i,j]=(gray,gray,gray)
 for ni in range (1,w+1):
-    for nj in range(1,h+1):
+    for nj in range(1,h+1):        #Görüntüyü matris içerişine çekebilmek için iç içe döngüler kullanıyoruz. Döngüde sınır değerlerimiz görüntünün genişlik ve yükseklik değerine göre ayarlandı. +
+                      
         temparray[ni][nj]=graylist[ni-1][nj-1]
 med=([0]*9)
 gecici=0
