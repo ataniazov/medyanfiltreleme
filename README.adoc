@@ -120,12 +120,13 @@ image::out2.jpg[Uygulama]
 image::out2medyan.bmp[Sonuç]
 
 
+
 [TIP]
 ====
 Daha anlaşılabilir olması için "tuz biber örnekleri"ni internette aratabilirsiniz.
+
 ====
 
-* print im.getpixel ((3,5))  yazarak debug yapabilirsiniz. +
 
 
 
