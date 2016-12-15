@@ -168,3 +168,11 @@ im.save("C:\Users\MERVE\Pictures\medyands.bmp")
 image::deneme1.png[Uygulama 2]
 
 image::medyands.bmp[Sonuç 2 ]
+
+== 6) Referanslar +
+
+. http://www.bulentsiyah.com/goruntu-filtreleme-uygulamalari-ve-amaclari-matlab/
+. http://bilgisayarkavramlari.sadievrenseker.com/2007/11/26/ortanca-filitresi-median-filter/
+. http://web.firat.edu.tr/iaydin/bmu357/bmu_357_bolum5.pdf
+. http://www.programming-techniques.com/2013/02/median-filter-using-c-and-opencv-image.html
+. http://stackoverflow.com/questions/6944150/otsus-method-and-a-median-filter-in-python?rq=1
