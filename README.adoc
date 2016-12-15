@@ -119,69 +119,15 @@ image::out2.jpg[Uygulama]
 
 image::out2medyan.bmp[Sonuç]
 
-
+.Not:
+[NOTE]
+====
+Daha anlaşılabilir olması için "tuz biber örnekleri"ni internette aratabilirsiniz.
+====
 
 * print im.getpixel ((3,5))  yazarak debug yapabilirsiniz. +
 
-[[source,python]]
-----
-from PIL import Image 	                                 #PIL kütüphanesinden Image kütüphanesini projeye   dahil ediyoruz.
-resim=Image.open("resim.jpg") 	                         #Projemizin olduğu dosya klasörünün içinde bulunan resim dosyasını açıyoruz.
-yuklenen = resim.load()	                                #resim dosyasını yüklenen adında matrise atıyoruz.
-genislik=resim.size[0] 	                                #resim dosyasının ilk elemanını genişlik değişkeninine atıyoruz.
-yukseklik=resim.size[1] 	                               #resim dosyasının ikinci elemanını yükseklik değişkenine atıyoruz.
-graylist=[[0]*yukseklik for x in range(genislik)] 	     #graylist adında bir matris tanımladık. Bu matrisin boyutu resim dosyasının yükseklik ve genişlik değerinden aldık.
-for i in range(genislik): 	                             # İç içe döngü oluşturduk ve görüntünün değerlerini matrise atadık.
-    for j in range(yukseklik):
-        r, g, b = resim.getpixel((i, j)) 	              #resim dosyasının her pixelinin renk kodları sayısal değer olarak r, g, b değişkenlerine atanır.
-        gray=(int)((r*0.2126)+(g*0.7152)+(b*0.0722))    # Resim görüntüsünün kırmızı, yeşil, mavi renklerinin değerlerine uygun kodlar verilerek gri renk elde edilebilir. Burada verdiğimiz değerler bu renk kodlarının gri halini ortaya koyacaktır. Bulunan sayısal değer gray değişkenine atanır.
-        graylist[i][j]=gray	                            #gray değişkeni graylist matrisinin tüm elemanlarına atanır.
-        yuklenen[i,j]=(gray,gray,gray) 	                #Yüklediğimiz resmin elemanları olan piksellerine gray değişkeninde ki sayısal değer atanacaktır. 3 ayrı gray değişkeni atılmasının nedeni ise r,g,b şeklinde üç kod bulunmaktadır. Ağırlık toplama yöntemi ile hesaplanan gri renk tonu ataması yapılır.
 
-resim.save("yeni.jpg")	                                 #Görüntüyü proje dosyasının içine kaydediyoruz.
-grayimage=Image.open("yeni.jpg") 	                      #Aynı görüntüyü farklı bir değişken içine atarak tekrar açıyoruz.
-median=grayimage.load() 	                               #Görüntüyü median matrisinin içerisine sayısal değerler olarak yüklüyoruz.
- w=grayimage.size[0]	                                   #grayimage görüntüsünü genişliği w değişkenine atanır. Burada görüntümüzün genişliği 640 pixel.
-
-h=grayimage.size[1] 	                                   #grayimage görüntüsünü yüksekliği w değişkenine atanır. Burada görüntümüzün yüksekliği 360 pixel.
- 
-members=([0]*9)	                                        #Burada members adında 3x3’lük bir matris oluşturuyoruz. Ve ilk değeri “0” olarak atanmıştır.
- 
-for x in range (1,w-1):	                                #Görüntüyü matris içerişine çekebilmek için iç içe döngüler kullanıyoruz. Döngüde sınır değerlerimiz görüntünün genişlik ve yükseklik değerine göre ayarlandı.
- 
-    for y in range (1,h-1):
-        members[0]=graylist[x-1][y-1]                  	#members matrisinin [0]. elemanının içerisine graylist matrisinin [0,0] elemanı atandı.
- 
-        members[1]=graylist[x][y-1]	                    #members matrisinin [1]. elemanının içerisine graylist matrisinin [1,0] elemanı atandı.
- 
-        members[2]=graylist[x+1][y-1]	                  #members matrisinin [2]. elemanının içerisine graylist matrisinin [2,0] elemanı atandı.
- 
-        members[3]=graylist[x-1][y]	                    #members matrisinin [3]. elemanının içerisine graylist matrisinin [0,1] elemanı atandı.
- 
-        members[4]=graylist[x][y]	                      #members matrisinin [4]. elemanının içerisine graylist matrisinin [1,1] elemanı atandı.
- 
-        members[5]=graylist[x+1][y]	                    #members matrisinin [5]. elemanının içerisine graylist matrisinin [2,1] elemanı atandı.
- 
-        members[6]=graylist[x-1][y+1]	                  #members matrisinin [6]. elemanının içerisine graylist matrisinin [0,2] elemanı atandı.
- 
-        members[7]=graylist[x][y+1]                     #members matrisinin [7]. elemanının içerisine graylist matrisinin [1,2] elemanı atandı.
- 
-        members[8]=graylist[x+1][y+1]	                  #members matrisinin [8]. elemanının içerisine graylist matrisinin [2,2] elemanı atandı.
- 
-
-        members.sort()	                                 #members matrisini sort fonksiyonunu kullanarak sıralıyoruz. Böylece matristeki tüm değerleri sıralamış oluyoruz. Bu sayede medyan filtresi mantığındaki gibi ortadaki değeri çekebiliriz.
- 
-        med=members[(len(members))/2]	                  #Burada sıralanmış olan matrisimizin uzunluğunu ikiye bölerek ortanca değerini yani medyan değerini çekiyoruz ve med değişkeni içine atıyoruz.
- 
-        median[x,y]=(med,med,med)	                      #median görüntüsünün tüm indislerine bulduğumuz med ortanca değerindeki sayısal değeri atıyoruz.
-
-
-grayimage.save("yeni1.jpg") 	                           #Görüntüyü proje dosyası içerisine kaydediyoruz.
-
-
-grayimage.show()	                                       #Görüntüyü ekrana basıyoruz.
-
-----
 
 Görüntünün ilk hali +
 
