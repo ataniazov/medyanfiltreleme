@@ -184,12 +184,15 @@ grayimage.show()	                                       #Görüntüyü ekrana ba
 ----
 
 Görüntünün ilk hali +
+
 image::m1normal.png[normal]
 
 Görüntünün Ağırlık Toplama işleminden sonraki hali +
+
 image::m1agırlık.pngp[Sonuç]
 
-Görüntünün Medyan Filtre işleminden geçmiş hali+
+Görüntünün Medyan Filtre işleminden geçmiş hali +
+
 image::m1medyan.png[Medyan]
 
 == 6) Referanslar +
