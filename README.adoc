@@ -119,8 +119,8 @@ image::out2.jpg[Uygulama]
 
 image::out2medyan.bmp[Sonuç]
 
-.Resimler İçin:
-[NOT]
+
+[TIP]
 ====
 Daha anlaşılabilir olması için "tuz biber örnekleri"ni internette aratabilirsiniz.
 ====
