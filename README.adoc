@@ -125,49 +125,72 @@ image::out2medyan.bmp[Sonuç]
 
 [[source,python]]
 ----
+from PIL import Image 	                                 #PIL kütüphanesinden Image kütüphanesini projeye   dahil ediyoruz.
+resim=Image.open("resim.jpg") 	                         #Projemizin olduğu dosya klasörünün içinde bulunan resim dosyasını açıyoruz.
+yuklenen = resim.load()	                                #resim dosyasını yüklenen adında matrise atıyoruz.
+genislik=resim.size[0] 	                                #resim dosyasının ilk elemanını genişlik değişkeninine atıyoruz.
+yukseklik=resim.size[1] 	                               #resim dosyasının ikinci elemanını yükseklik değişkenine atıyoruz.
+graylist=[[0]*yukseklik for x in range(genislik)] 	     #graylist adında bir matris tanımladık. Bu matrisin boyutu resim dosyasının yükseklik ve genişlik değerinden aldık.
+for i in range(genislik): 	                             # İç içe döngü oluşturduk ve görüntünün değerlerini matrise atadık.
+    for j in range(yukseklik):
+        r, g, b = resim.getpixel((i, j)) 	              #resim dosyasının her pixelinin renk kodları sayısal değer olarak r, g, b değişkenlerine atanır.
+        gray=(int)((r*0.2126)+(g*0.7152)+(b*0.0722))    # Resim görüntüsünün kırmızı, yeşil, mavi renklerinin değerlerine uygun kodlar verilerek gri renk elde edilebilir. Burada verdiğimiz değerler bu renk kodlarının gri halini ortaya koyacaktır. Bulunan sayısal değer gray değişkenine atanır.
+        graylist[i][j]=gray	                            #gray değişkeni graylist matrisinin tüm elemanlarına atanır.
+        yuklenen[i,j]=(gray,gray,gray) 	                #Yüklediğimiz resmin elemanları olan piksellerine gray değişkeninde ki sayısal değer atanacaktır. 3 ayrı gray değişkeni atılmasının nedeni ise r,g,b şeklinde üç kod bulunmaktadır. Ağırlık toplama yöntemi ile hesaplanan gri renk tonu ataması yapılır.
+
+resim.save("yeni.jpg")	                                 #Görüntüyü proje dosyasının içine kaydediyoruz.
+grayimage=Image.open("yeni.jpg") 	                      #Aynı görüntüyü farklı bir değişken içine atarak tekrar açıyoruz.
+median=grayimage.load() 	                               #Görüntüyü median matrisinin içerisine sayısal değerler olarak yüklüyoruz.
+ w=grayimage.size[0]	                                   #grayimage görüntüsünü genişliği w değişkenine atanır. Burada görüntümüzün genişliği 640 pixel.
+
+h=grayimage.size[1] 	                                   #grayimage görüntüsünü yüksekliği w değişkenine atanır. Burada görüntümüzün yüksekliği 360 pixel.
+ 
+members=([0]*9)	                                        #Burada members adında 3x3’lük bir matris oluşturuyoruz. Ve ilk değeri “0” olarak atanmıştır.
+ 
+for x in range (1,w-1):	                                #Görüntüyü matris içerişine çekebilmek için iç içe döngüler kullanıyoruz. Döngüde sınır değerlerimiz görüntünün genişlik ve yükseklik değerine göre ayarlandı.
+ 
+    for y in range (1,h-1):
+        members[0]=graylist[x-1][y-1]                  	#members matrisinin [0]. elemanının içerisine graylist matrisinin [0,0] elemanı atandı.
+ 
+        members[1]=graylist[x][y-1]	                    #members matrisinin [1]. elemanının içerisine graylist matrisinin [1,0] elemanı atandı.
+ 
+        members[2]=graylist[x+1][y-1]	                  #members matrisinin [2]. elemanının içerisine graylist matrisinin [2,0] elemanı atandı.
+ 
+        members[3]=graylist[x-1][y]	                    #members matrisinin [3]. elemanının içerisine graylist matrisinin [0,1] elemanı atandı.
+ 
+        members[4]=graylist[x][y]	                      #members matrisinin [4]. elemanının içerisine graylist matrisinin [1,1] elemanı atandı.
+ 
+        members[5]=graylist[x+1][y]	                    #members matrisinin [5]. elemanının içerisine graylist matrisinin [2,1] elemanı atandı.
+ 
+        members[6]=graylist[x-1][y+1]	                  #members matrisinin [6]. elemanının içerisine graylist matrisinin [0,2] elemanı atandı.
+ 
+        members[7]=graylist[x][y+1]                     #members matrisinin [7]. elemanının içerisine graylist matrisinin [1,2] elemanı atandı.
+ 
+        members[8]=graylist[x+1][y+1]	                  #members matrisinin [8]. elemanının içerisine graylist matrisinin [2,2] elemanı atandı.
+ 
+
+        members.sort()	                                 #members matrisini sort fonksiyonunu kullanarak sıralıyoruz. Böylece matristeki tüm değerleri sıralamış oluyoruz. Bu sayede medyan filtresi mantığındaki gibi ortadaki değeri çekebiliriz.
+ 
+        med=members[(len(members))/2]	                  #Burada sıralanmış olan matrisimizin uzunluğunu ikiye bölerek ortanca değerini yani medyan değerini çekiyoruz ve med değişkeni içine atıyoruz.
+ 
+        median[x,y]=(med,med,med)	                      #median görüntüsünün tüm indislerine bulduğumuz med ortanca değerindeki sayısal değeri atıyoruz.
 
 
-import Image
-im=Image.open("C:\Users\MERVE\Pictures\deneme1.png")
-pix=im.load()
-w=im.size[0]
-h=im.size[1]
-graylist=[[0]*h for x in range(w)]
-temparray=[[0]*(h+2) for x in range(w+2)]
-print im.getpixel((3,5))
-for i in range(w):
-    for j in range(h):       
-        r, g, b = im.getpixel((i, j))
-        print r,g,b,
-        gray=(int)((r*0.2126)+(g*0.7152)+(b*0.0722))
-        graylist[i][j]=gray
-        pix[i,j]=(gray,gray,gray)
-for ni in range (1,w+1):
-    for nj in range(1,h+1):
-        temparray[ni][nj]=graylist[ni-1][nj-1]
-med=([0]*9)
-gecici=0
-for m in range(1,w+2-1):
-    for n in range(1,h+2-1):
-        med[0]=temparray[m-1][n-1]
-        med[1]=temparray[m-1][n]
-        med[2]=temparray[m-1][n+1]
-        med[3]=temparray[m][n-1]
-        med[4]=temparray[m][n]
-        med[5]=temparray[m][n+1]
-        med[6]=temparray[m+1][n-1]
-        med[7]=temparray[m+1][n]
-        med[8]=temparray[m+1][n+1]
-        med=sorted(med)
-        value=med[4]
-        pix[m-1,n-1]=(value,value,value)
-im.save("C:\Users\MERVE\Pictures\medyands.bmp")
+grayimage.save("yeni1.jpg") 	                           #Görüntüyü proje dosyası içerisine kaydediyoruz.
+
+
+grayimage.show()	                                       #Görüntüyü ekrana basıyoruz.
 
 ----
 
-image::deneme1.png[Uygulama 2]
+Görüntünün ilk hali +
+image::m1normal.png[normal]
 
-image::medyands.bmp[Sonuç 2 ]
+Görüntünün Ağırlık Toplama işleminden sonraki hali +
+image::m1agırlık.pngp[Sonuç]
+
+Görüntünün Medyan Filtre işleminden geçmiş hali+
+image::m1medyan.png[Medyan]
 
 == 6) Referanslar +
 
