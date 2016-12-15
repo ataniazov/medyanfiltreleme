@@ -164,3 +164,7 @@ for m in range(1,w+2-1):
 im.save("C:\Users\MERVE\Pictures\medyands.bmp")
 
 ----
+
+image::deneme1.png[Uygulama 2]
+
+image::medyands.bmp[Sonuç 2 ]
