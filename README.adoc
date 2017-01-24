@@ -76,7 +76,7 @@ image::medyan1.png[Resim 1]
 == 5)Python ile Medyan Filtre Uygulama Örneği +
 
 [[source,python,numbered]]
-----
+---------------------------------------------------------------------
 
 import Image
 im=Image.open("C:\Users\MERVE\Pictures\deneme1.png")
@@ -114,10 +114,7 @@ for m in range(1,w+2-1):
         pix[m-1,n-1]=(value,value,value)
 im.save("C:\Users\MERVE\Pictures\medyands.bmp")
 
-
-
-----
-
+---------------------------------------------------------------------
 
 
 
