@@ -75,7 +75,7 @@ image::medyan1.png[Resim 1]
 
 == 5)Python ile Medyan Filtre Uygulama Örneği +
 
-[[source,python]]
+[[source,python,numbered]]
 ----
 
 import Image
@@ -118,10 +118,6 @@ im.save("C:\Users\MERVE\Pictures\medyands.bmp")
 
 ----
 
-[source,java]
-----
-include::mdyan.py[]
-----
 
 
 
