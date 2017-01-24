@@ -76,6 +76,8 @@ image::medyantablo.png[Resim 1]
 
 == 5)Python ile Medyan Filtre Uygulama Örneği +
 
+http://www.programming-techniques.com/2013/02/median-filter-using-c-and-opencv-image.html[[4]]
+
 [source,python,numbered]
 ---------------------------------------------------------------------
 
