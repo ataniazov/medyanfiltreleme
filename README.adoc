@@ -45,7 +45,7 @@ Medyan filtreler nonlineer uzaysal filtrelerdir. Maskeyi oluşturan boyuttaki re
 Mean filtrelerinin genel çalışma mantığı ise; NxN lik bir matris penceresi içerisinde bir ortalama değer bulmaya çalışarak işlenir. 
 Bunu yaparken görüntü üzerinde gezen bir kayan pencere yöntemi kullanırlar. Medyan filtresi mean filtreleri içerisinde en basit olanıdır. Pencere içerisindeki değerlerin aritmetik ortalamasını alır ve bu şekilde büyük atlamaları kaldırmış olur. Filtre uygulandıktan sonra; konumlarından ayrılmış olan pikseller tespit edilerek temizlenmiş olur. Görüntü içerisindeki yerel değişimleri yumuşatmış olur. Sırada medyan filtresinin gerçekleştirdiği işlemler anlatılacaktır. +
 
-Medyan filtresi için örnek olarak alınan değerler sırasıyla şunlar olsun: +
+Medyan filtresi için örnek olarak alınan değerler sırasıyla şunlar olsun: http://bilgisayarkavramlari.sadievrenseker.com/2007/11/26/ortanca-filitresi-median-filter/[[2]] +
 
 996, 1718, 1002, 993, 1692, 1003 +
 Alınan bu sayıları  3’erli gruplayalım(window size=3 alındı): +
