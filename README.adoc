@@ -73,6 +73,7 @@ Medyan filtreyi bir görselle de ifade edecek olursak, aşağıda paylaşılan g
 
 image::medyantablo.png[Resim 1]
 
+
 == 5)Python ile Medyan Filtre Uygulama Örneği +
 
 [source,python,numbered]
