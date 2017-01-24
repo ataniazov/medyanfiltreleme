@@ -79,12 +79,13 @@ image::medyan1.png[Resim 1]
 ----
 
 import Image
-im=Image.open("C:\Users\MERVE\Pictures\out2.jpg")
+im=Image.open("C:\Users\MERVE\Pictures\deneme1.png")
 pix=im.load()
 w=im.size[0]
 h=im.size[1]
 graylist=[[0]*h for x in range(w)]
 temparray=[[0]*(h+2) for x in range(w+2)]
+print im.getpixel((3,5))
 for i in range(w):
     for j in range(h):       
         r, g, b = im.getpixel((i, j))
@@ -93,9 +94,9 @@ for i in range(w):
         graylist[i][j]=gray
         pix[i,j]=(gray,gray,gray)
 for ni in range (1,w+1):
-    for nj in range(1,h+1):        #Görüntüyü matris içerişine çekebilmek için iç içe döngüler kullanıyoruz. Döngüde sınır değerlerimiz görüntünün genişlik ve yükseklik değerine göre ayarlandı.                       
+    for nj in range(1,h+1):
         temparray[ni][nj]=graylist[ni-1][nj-1]
-med=([0]*9)                        #Burada members adında 3x3’lük bir matris oluşturuyoruz. Ve ilk değeri “0” olarak atanmıştır 
+med=([0]*9)
 gecici=0
 for m in range(1,w+2-1):
     for n in range(1,h+2-1):
@@ -111,17 +112,13 @@ for m in range(1,w+2-1):
         med=sorted(med)
         value=med[4]
         pix[m-1,n-1]=(value,value,value)
-im.save("C:\Users\MERVE\Pictures\out2medyan.bmp")
+im.save("C:\Users\MERVE\Pictures\medyands.bmp")
+
 
 ----
 
 
-[[source,python]]
-----
 
-include::res/mdyan.py[]
-
-----
 
 
 image::out2.jpg[Uygulama] 
