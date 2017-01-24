@@ -117,7 +117,7 @@ im.save("C:\Users\MERVE\Pictures\out2medyan.bmp")
 
 [[source,python]]
 ----
-include::mdyan.py[]
+include::res/source.mdyan.py[]
 ----
 
 
