@@ -30,7 +30,7 @@
 
 Medyan filtresi görüntü işlemede çok sık kullanılan filtredir. Görüntülerde gürültü adı verilen, istenmeyen sinyaller bulunmaktadır. 
 Gürültü, görüntüyü kirleten ve görüntü kalitesini düşüren harici kaynaklarda oluşan etkidir. Gürültü bir görüntü içerisinde bir çok 
-farklı kaynaklardan meydana gelebilir. Filtreleme   yöntemleri sayesinde görüntüler gürültüden arındırılarak istenilen hale getirilebilir. http://www.bulentsiyah.com/goruntu-filtreleme-uygulamalari-ve-amaclari-matlab/[[1]] +
+farklı kaynaklardan meydana gelebilir. Filtreleme   yöntemleri sayesinde görüntüler gürültüden arındırılarak istenilen hale getirilebilir http://www.bulentsiyah.com/goruntu-filtreleme-uygulamalari-ve-amaclari-matlab/[[1]] . +
 
 Filtreleme yöntemi görsel üzerinde uygulanılacaktır. Uygulama sırasında hangi işlemlerin yapıldığı, filtrenin seçimi ve aşamalar anlatılacaktır. 
 Uygulamanın Python dilinde kodlamasında gerçekleştirilecektir. +
