@@ -75,10 +75,10 @@ image::medyan1.png[Resim 1]
 
 == 5)Python ile Medyan Filtre Uygulama Örneği +
 
-[[source,python,numbered]]
+[source,python,numbered]
 ---------------------------------------------------------------------
 
-''' import ''' Image
+import  Image
 im=Image.open("C:\Users\MERVE\Pictures\deneme1.png")
 pix=im.load()
 w=im.size[0]
