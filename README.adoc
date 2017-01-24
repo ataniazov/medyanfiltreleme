@@ -69,7 +69,7 @@ Buna göre ilk başta verilmiş olan; 996 1718 1002 993 1692 1003 sayılarının
  996  1002  1002  1002 1003 1003  +
 Yeni elde ettiğimiz değerlerden anlaşılacağı gürültüden kaynaklı 1718 ve 1692 sayıları kaybolmuştur. Yeni değerlerin ortalaması ise 1001,3 dür. +
 Değerler; ortanca filtre kullanılmadan önce ortalama 1234 idi. Ortanca filtresi kullanımından sonra 1001,3 olmuştur. +
-Medyan filtreyi bir görselle de ifade edecek olursak, aşağıda paylaşılan görsel incelenebilir. +
+Medyan filtreyi bir görselle de ifade edecek olursak, aşağıda paylaşılan görsel incelenebilirhttp://web.firat.edu.tr/iaydin/bmu357/bmu_357_bolum5.pdf[[3]]. +
 
 image::medyantablo.png[Resim 1]
 
