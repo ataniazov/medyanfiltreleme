@@ -144,7 +144,7 @@ image::m1normal.png[normal]
 
 image::m1agırlık.png[Sonuç Ağırlık]
 
-2. Adım +
+Son Adım +
 
 image::m1medyan.png[Medyan]
 
