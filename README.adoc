@@ -136,15 +136,15 @@ Daha anlaşılabilir olması için "tuz biber örnekleri"ni internette aratabili
 
 
 
-Görüntünün ilk hali +
+Resmin Orjinal Hali +
 
 image::m1normal.png[normal]
 
-Görüntünün Ağırlık Toplama işleminden sonraki hali +
+1. Adım +
 
 image::m1agırlık.png[Sonuç Ağırlık]
 
-Görüntünün Medyan Filtre işleminden geçmiş hali +
+2. Adım +
 
 image::m1medyan.png[Medyan]
 
