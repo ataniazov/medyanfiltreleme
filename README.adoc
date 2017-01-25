@@ -121,7 +121,7 @@ im.save("C:\Users\MERVE\Pictures\medyands.bmp")
 
 
 
-image::out2.jpg[Uygulama,role="right"] 
+image::out2.jpg[Uygulama,role="middle"] 
 
 image::out2medyan.bmp[Sonuç] 
 
